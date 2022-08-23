@@ -1,8 +1,11 @@
 import { useEffect, useRef } from "react"
 
-type Props = {}
+type Props = {
+  width: number,
+  height: number
+}
 
-function Lightboard({}: Props) {
+function Lightboard({ width, height}: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -10,13 +13,13 @@ function Lightboard({}: Props) {
 
     if (ctx) {
       ctx.fillStyle = 'green';
-      ctx.fillRect(10, 10, 150, 100);
+      ctx.fillRect(0, 0, width, height);
     }
-  }, [canvasRef])
+  }, [canvasRef, height, width])
   
   
   return (
-    <canvas ref={canvasRef}></canvas>
+    <canvas ref={canvasRef} width={width} height={height}></canvas>
   )
 }
 
