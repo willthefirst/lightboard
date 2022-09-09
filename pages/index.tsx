@@ -12,7 +12,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Lightboard width={300} height={400} />
+        <Lightboard width={640} height={400} rows={4} cols={2} />
       </main>
         
     </div>
